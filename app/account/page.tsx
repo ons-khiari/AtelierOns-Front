@@ -19,7 +19,6 @@ export default function AccountPage() {
     lastName: "",
     email: "",
     phoneNumber: "",
-    address: "",
   })
   const [isSaving, setIsSaving] = useState(false)
 
@@ -32,7 +31,6 @@ export default function AccountPage() {
         lastName: user.lastName,
         email: user.email,
         phoneNumber: user.phoneNumber,
-        address: user.address,
       })
     }
   }, [isLoggedIn, user, router])
@@ -98,12 +96,6 @@ export default function AccountPage() {
                       {user?.phoneNumber || "Not provided"}
                     </p>
                   </div>
-                  <div>
-                    <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="text-foreground">
-                      {user?.address || "Not provided"}
-                    </p>
-                  </div>
                 </div>
                 <button
                   onClick={() => setIsEditing(true)}
@@ -152,18 +144,6 @@ export default function AccountPage() {
                       onChange={handleChange}
                       className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
                     />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">
-                      Address
-                    </label>
-                    <textarea
-                      name="address"
-                      value={formData.address}
-                      onChange={handleChange}
-                      rows={3}
-                      className="w-full px-4 py-2 border border-border rounded-lg bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    ></textarea>
                   </div>
                 </div>
                 <div className="flex gap-2">
