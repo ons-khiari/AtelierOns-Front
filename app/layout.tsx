@@ -1,21 +1,25 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
-import { Playfair_Display } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
-import { CartProvider } from "@/lib/cart-context"
-import { FavoritesProvider } from "@/lib/favorites-context"
-import { AuthProvider } from "@/lib/auth-context"
-import { BackstockProvider } from "@/lib/backstock-context"
-import "./globals.css"
+import type React from "react";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { CartProvider } from "@/lib/cart-context";
+import { FavoritesProvider } from "@/lib/favorites-context";
+import { AuthProvider } from "@/lib/auth-context";
+import { BackstockProvider } from "@/lib/backstock-context";
+import "./globals.css";
 
-const _geist = Geist({ subsets: ["latin"] })
-const _geistMono = Geist_Mono({ subsets: ["latin"] })
-const _playfairDisplay = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" })
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const _playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+});
 
 export const metadata: Metadata = {
-  title: "Ons Atelier - Dark Romance Stationery",
-  description: "Elegantly crafted journal folios, bookmarks, and stationery for the sophisticated soul",
+  title: "Atelier Ons - Dark Romance Stationery",
+  description:
+    "Elegantly crafted journal folios, bookmarks, and stationery for the sophisticated soul",
   generator: "v0.app",
   icons: {
     icon: [
@@ -34,12 +38,12 @@ export const metadata: Metadata = {
     ],
     apple: "/apple-icon.png",
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -56,5 +60,5 @@ export default function RootLayout({
         </AuthProvider>
       </body>
     </html>
-  )
+  );
 }

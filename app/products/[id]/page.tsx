@@ -1,51 +1,74 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { ReviewsSection } from "@/components/reviews-section"
-import { ShoppingCart, Heart, Star, ChevronLeft, ChevronRight } from "lucide-react"
-import { useCart } from "@/lib/cart-context"
-import { useFavorites } from "@/lib/favorites-context"
-import { ProductCard } from "@/components/product-card"
-import { getProductById, getProductsByCategory, type Product } from "@/lib/products"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { ReviewsSection } from "@/components/reviews-section";
+import {
+  ShoppingCart,
+  Heart,
+  Star,
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
+import { useCart } from "@/lib/cart-context";
+import { useFavorites } from "@/lib/favorites-context";
+import { ProductCard } from "@/components/product-card";
+import {
+  getProductById,
+  getProductsByCategory,
+  type Product,
+} from "@/lib/products";
 
-export default function ProductPage({ params }: {params: { id: string } }) {
-  const [quantity, setQuantity] = useState(1)
-  const [currentImageIndex, setCurrentImageIndex] = useState(0)
-  const [showFavoritesToast, setShowFavoritesToast] = useState(false)
-  const [isAnimatingHeart, setIsAnimatingHeart] = useState(false)
-  const [mounted, setMounted] = useState(false)
-  const [selectedSize, setSelectedSize] = useState<"small" | "medium">("medium")
-  const [productId, setProductId] = useState("")
-  const [product, setProduct] = useState<Product | null>(null)
-  const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
+export default function ProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const [quantity, setQuantity] = useState(1);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [showFavoritesToast, setShowFavoritesToast] = useState(false);
+  const [isAnimatingHeart, setIsAnimatingHeart] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [selectedSize, setSelectedSize] = useState<"small" | "medium">(
+    "medium"
+  );
+  const [productId, setProductId] = useState("");
+  const [product, setProduct] = useState<Product | null>(null);
+  const [relatedProducts, setRelatedProducts] = useState<Product[]>([]);
 
-  const { addToCart } = useCart()
-  const { isFavorited, addToFavorites, removeFromFavorites } = useFavorites()
+  const { addToCart } = useCart();
+  const { isFavorited, addToFavorites, removeFromFavorites } = useFavorites();
 
-useEffect(() => {
-    setMounted(true)
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setMounted(true);
 
-    const id = params.id
-    const prod = getProductById(id)
+      const resolvedParams = await params;
+      const id = resolvedParams.id;
+      setProductId(id);
 
-    if (prod) {
-      setProduct(prod)
+      const prod = getProductById(id);
 
-      const related = getProductsByCategory(prod.category)
-        .filter((p) => p.id !== id)
-        .slice(0, 4)
+      if (prod) {
+        setProduct(prod);
 
-      setRelatedProducts(related)
-    }
+        const related = getProductsByCategory(prod.category)
+          .filter((p) => p.id !== id)
+          .slice(0, 4);
 
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }, [params])
+        setRelatedProducts(related);
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    fetchProduct();
+  }, [params]);
 
   const handleAddToCart = () => {
-    if (!product || product.stock === 0) return
+    if (!product || product.stock === 0) return;
 
     const cartItem = {
       id: product.id,
@@ -53,19 +76,23 @@ useEffect(() => {
       price: product.price,
       image: product.thumbnailImage,
       quantity,
-      ...(product.category === "Journal Folios" && { size: selectedSize }),
-    }
-    addToCart(cartItem)
-    setQuantity(1)
-  }
+      ...(product.category === "Journal Folios" && {
+        size: (selectedSize.charAt(0).toUpperCase() + selectedSize.slice(1)) as
+          | "Small"
+          | "Medium",
+      }),
+    };
+    addToCart(cartItem);
+    setQuantity(1);
+  };
 
   const handleWishlistToggle = () => {
-    if (!product) return
+    if (!product) return;
 
-    setIsAnimatingHeart(true)
+    setIsAnimatingHeart(true);
 
     if (isFavorited(product.id)) {
-      removeFromFavorites(product.id)
+      removeFromFavorites(product.id);
     } else {
       addToFavorites({
         id: product.id,
@@ -73,23 +100,26 @@ useEffect(() => {
         price: product.price,
         image: product.thumbnailImage,
         category: product.category,
-      })
+      });
     }
 
-    setShowFavoritesToast(true)
-    setTimeout(() => setIsAnimatingHeart(false), 500)
-    setTimeout(() => setShowFavoritesToast(false), 2000)
-  }
+    setShowFavoritesToast(true);
+    setTimeout(() => setIsAnimatingHeart(false), 500);
+    setTimeout(() => setShowFavoritesToast(false), 2000);
+  };
 
   const nextImage = () => {
-    if (!product) return
-    setCurrentImageIndex((prev) => (prev + 1) % product.galleryImages.length)
-  }
+    if (!product) return;
+    setCurrentImageIndex((prev) => (prev + 1) % product.galleryImages.length);
+  };
 
   const prevImage = () => {
-    if (!product) return
-    setCurrentImageIndex((prev) => (prev - 1 + product.galleryImages.length) % product.galleryImages.length)
-  }
+    if (!product) return;
+    setCurrentImageIndex(
+      (prev) =>
+        (prev - 1 + product.galleryImages.length) % product.galleryImages.length
+    );
+  };
 
   if (!mounted || !product) {
     return (
@@ -100,15 +130,17 @@ useEffect(() => {
         </div>
         <Footer />
       </main>
-    )
+    );
   }
 
-  const isFav = isFavorited(product.id)
-  const isSoldOut = product.stock === 0
-  const selectedSizeStock = product.variantStock?.[selectedSize] ?? product.stock
-  const isSizeOutOfStock = product.category === "Journal Folios" && selectedSizeStock === 0
+  const isFav = isFavorited(product.id);
+  const isSoldOut = product.stock === 0;
+  const selectedSizeStock =
+    product.variantStock?.[selectedSize] ?? product.stock;
+  const isSizeOutOfStock =
+    product.category === "Journal Folios" && selectedSizeStock === 0;
 
-  const categorySlug = product.category.toLowerCase().replace(/\s+/g, "-")
+  const categorySlug = product.category.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <main className="min-h-screen flex flex-col">
@@ -117,7 +149,9 @@ useEffect(() => {
       {showFavoritesToast && (
         <div className="fixed top-20 right-4 z-50 animate-popIn">
           <div className="bg-primary text-primary-foreground px-4 py-3 rounded shadow-lg">
-            <p className="font-semibold text-sm">{isFav ? "❤️ Added to Favorites" : "♡ Removed from Favorites"}</p>
+            <p className="font-semibold text-sm">
+              {isFav ? "❤️ Added to Favorites" : "♡ Removed from Favorites"}
+            </p>
           </div>
         </div>
       )}
@@ -128,7 +162,10 @@ useEffect(() => {
             Home
           </Link>
           <span>/</span>
-          <Link href={`/${categorySlug}`} className="hover:text-primary transition">
+          <Link
+            href={`/${categorySlug}`}
+            className="hover:text-primary transition"
+          >
             {product.category}
           </Link>
           <span>/</span>
@@ -142,14 +179,19 @@ useEffect(() => {
           <div>
             <div className="relative bg-muted rounded overflow-hidden mb-4 aspect-square">
               <img
-                src={product.galleryImages[currentImageIndex] || product.thumbnailImage}
+                src={
+                  product.galleryImages[currentImageIndex] ||
+                  product.thumbnailImage
+                }
                 alt={product.title}
                 className="w-full h-full object-cover"
               />
 
               {isSoldOut && (
                 <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                  <span className="text-white font-serif font-bold text-xl">Sold Out</span>
+                  <span className="text-white font-serif font-bold text-xl">
+                    Sold Out
+                  </span>
                 </div>
               )}
 
@@ -181,7 +223,9 @@ useEffect(() => {
                     key={idx}
                     onClick={() => setCurrentImageIndex(idx)}
                     className={`aspect-square rounded overflow-hidden border-2 transition ${
-                      idx === currentImageIndex ? "border-primary" : "border-border"
+                      idx === currentImageIndex
+                        ? "border-primary"
+                        : "border-border"
                     }`}
                   >
                     <img
@@ -198,8 +242,12 @@ useEffect(() => {
           {/* Product Details */}
           <div className="flex flex-col">
             <div className="mb-6">
-              <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">{product.category}</p>
-              <h1 className="font-serif text-4xl font-bold text-foreground mb-4">{product.title}</h1>
+              <p className="text-accent uppercase tracking-widest text-xs font-semibold mb-2">
+                {product.category}
+              </p>
+              <h1 className="font-serif text-4xl font-bold text-foreground mb-4">
+                {product.title}
+              </h1>
 
               <div className="flex items-center gap-4 mb-6">
                 <div className="flex gap-1">
@@ -207,32 +255,43 @@ useEffect(() => {
                     <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
-                <span className="text-sm text-muted-foreground">(24 reviews)</span>
+                <span className="text-sm text-muted-foreground">
+                  (24 reviews)
+                </span>
               </div>
 
-              <p className="font-serif text-3xl text-primary mb-4">${product.price}</p>
+              <p className="font-serif text-3xl text-primary mb-4">
+                ${product.price}
+              </p>
 
               <div className="mb-6">
                 {isSoldOut ? (
                   <div className="text-red-500 font-semibold">Out of Stock</div>
                 ) : product.stock < 5 ? (
-                  <div className="text-amber-600 font-semibold">Only {product.stock} left in stock</div>
+                  <div className="text-amber-600 font-semibold">
+                    Only {product.stock} left in stock
+                  </div>
                 ) : (
                   <div className="text-green-600 font-semibold">In Stock</div>
                 )}
               </div>
 
-              <p className="text-foreground leading-relaxed">{product.description}</p>
+              <p className="text-foreground leading-relaxed">
+                {product.description}
+              </p>
             </div>
 
             {product.category === "Journal Folios" && product.variantStock && (
               <div className="mb-8 pb-8 border-b border-border">
-                <h3 className="font-serif font-bold text-foreground mb-4">Size</h3>
+                <h3 className="font-serif font-bold text-foreground mb-4">
+                  Size
+                </h3>
                 <div className="flex gap-3">
                   {Object.entries(product.variantStock).map(([size, stock]) => {
-                    const sizeLabel = size.charAt(0).toUpperCase() + size.slice(1)
-                    const sizeKey = size as "small" | "medium"
-                    const isSoldOut = stock === 0
+                    const sizeLabel =
+                      size.charAt(0).toUpperCase() + size.slice(1);
+                    const sizeKey = size as "small" | "medium";
+                    const isSoldOut = stock === 0;
 
                     return (
                       <button
@@ -247,7 +306,7 @@ useEffect(() => {
                       >
                         {sizeLabel} {isSoldOut && "(Out of Stock)"}
                       </button>
-                    )
+                    );
                   })}
                 </div>
               </div>
@@ -263,7 +322,9 @@ useEffect(() => {
                 >
                   −
                 </button>
-                <span className="flex-1 text-center font-semibold">{quantity}</span>
+                <span className="flex-1 text-center font-semibold">
+                  {quantity}
+                </span>
                 <button
                   onClick={() => setQuantity(quantity + 1)}
                   disabled={isSoldOut || isSizeOutOfStock}
@@ -285,7 +346,9 @@ useEffect(() => {
               <button
                 onClick={handleWishlistToggle}
                 className={`px-6 py-3 border-2 rounded font-serif font-bold transition flex items-center justify-center gap-2 ${
-                  isFav ? "bg-primary/10 border-primary text-primary" : "border-primary text-primary hover:bg-primary/5"
+                  isFav
+                    ? "bg-primary/10 border-primary text-primary"
+                    : "border-primary text-primary hover:bg-primary/5"
                 } ${isAnimatingHeart ? "animate-heartPulse" : ""}`}
               >
                 <Heart className={`w-5 h-5 ${isFav ? "fill-current" : ""}`} />
@@ -301,7 +364,9 @@ useEffect(() => {
           {/* Related Products */}
           {relatedProducts.length > 0 && (
             <div className="mt-20">
-              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">Similar Products</h2>
+              <h2 className="font-serif text-3xl font-bold text-foreground mb-8">
+                Similar Products
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {relatedProducts.map((prod) => (
                   <ProductCard key={prod.id} product={prod} />
@@ -314,5 +379,5 @@ useEffect(() => {
 
       <Footer />
     </main>
-  )
+  );
 }

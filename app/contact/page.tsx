@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Header } from '@/components/header';
 import { Footer } from '@/components/footer';
+import Link from "next/link";
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 
 export default function ContactPage() {
@@ -73,7 +74,7 @@ export default function ContactPage() {
                   {
                     icon: MapPin,
                     label: 'Location',
-                    value: 'New York, NY 10001',
+                    value: 'Tunis, Tunisia',
                     href: '#',
                   },
                 ].map((item, i) => {
@@ -87,9 +88,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <h3 className="font-serif font-bold text-foreground">{item.label}</h3>
-                        <a href={item.href} className="text-muted-foreground hover:text-primary transition">
+                        <Link href={item.href} className="text-muted-foreground hover:text-primary transition">
                           {item.value}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   );

@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { useAuth } from "@/lib/auth-context"
+import Link from "next/link";
 import { User } from "lucide-react"
 
 export default function AccountPage() {
@@ -60,8 +61,12 @@ export default function AccountPage() {
         <div className="max-w-2xl mx-auto">
           {/* Header */}
           <div className="mb-8">
-            <h1 className="font-serif text-4xl font-bold text-foreground mb-2">My Account</h1>
-            <p className="text-muted-foreground">Manage your profile and preferences</p>
+            <h1 className="font-serif text-4xl font-bold text-foreground mb-2">
+              My Account
+            </h1>
+            <p className="text-muted-foreground">
+              Manage your profile and preferences
+            </p>
           </div>
 
           {/* Profile Card */}
@@ -86,12 +91,18 @@ export default function AccountPage() {
                     <p className="text-foreground">{user?.email}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">Phone Number</p>
-                    <p className="text-foreground">{user?.phoneNumber || "Not provided"}</p>
+                    <p className="text-sm text-muted-foreground">
+                      Phone Number
+                    </p>
+                    <p className="text-foreground">
+                      {user?.phoneNumber || "Not provided"}
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Address</p>
-                    <p className="text-foreground">{user?.address || "Not provided"}</p>
+                    <p className="text-foreground">
+                      {user?.address || "Not provided"}
+                    </p>
                   </div>
                 </div>
                 <button
@@ -106,7 +117,9 @@ export default function AccountPage() {
                 <div className="space-y-4 mb-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">First Name</label>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        First Name
+                      </label>
                       <input
                         type="text"
                         name="firstName"
@@ -116,7 +129,9 @@ export default function AccountPage() {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-foreground mb-2">Last Name</label>
+                      <label className="block text-sm font-medium text-foreground mb-2">
+                        Last Name
+                      </label>
                       <input
                         type="text"
                         name="lastName"
@@ -127,7 +142,9 @@ export default function AccountPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Phone Number</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number
+                    </label>
                     <input
                       type="tel"
                       name="phoneNumber"
@@ -137,7 +154,9 @@ export default function AccountPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-foreground mb-2">Address</label>
+                    <label className="block text-sm font-medium text-foreground mb-2">
+                      Address
+                    </label>
                     <textarea
                       name="address"
                       value={formData.address}
@@ -168,32 +187,40 @@ export default function AccountPage() {
 
           {/* Quick Links */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <a
+            <Link
               href="/account/orders"
               className="p-6 bg-muted rounded-lg border border-border hover:border-primary transition text-center"
             >
-              <h3 className="font-serif font-bold text-foreground mb-2">My Orders</h3>
-              <p className="text-sm text-muted-foreground">View your order history</p>
-            </a>
-            <a
+              <h3 className="font-serif font-bold text-foreground mb-2">
+                My Orders
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                View your order history
+              </p>
+            </Link>
+            <Link
               href="/account/favorites"
               className="p-6 bg-muted rounded-lg border border-border hover:border-primary transition text-center"
             >
-              <h3 className="font-serif font-bold text-foreground mb-2">My Favorites</h3>
+              <h3 className="font-serif font-bold text-foreground mb-2">
+                My Favorites
+              </h3>
               <p className="text-sm text-muted-foreground">View saved items</p>
-            </a>
-            <a
+            </Link>
+            <Link
               href="/account/ratings"
               className="p-6 bg-muted rounded-lg border border-border hover:border-primary transition text-center"
             >
-              <h3 className="font-serif font-bold text-foreground mb-2">My Reviews</h3>
+              <h3 className="font-serif font-bold text-foreground mb-2">
+                My Reviews
+              </h3>
               <p className="text-sm text-muted-foreground">View your ratings</p>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
       <Footer />
     </main>
-  )
+  );
 }

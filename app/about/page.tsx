@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Header } from '@/components/header';
-import { Footer } from '@/components/footer';
-import { Heart } from 'lucide-react';
+import Link from "next/link";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Heart } from "lucide-react";
 
 export default function AboutPage() {
   return (
@@ -17,7 +17,8 @@ export default function AboutPage() {
             Our Story
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            Where elegance meets intention, where every page holds a secret, and where writing becomes art.
+            Where elegance meets intention, where every page holds a secret, and
+            where writing becomes art.
           </p>
         </div>
       </section>
@@ -33,13 +34,22 @@ export default function AboutPage() {
                   The Beginning
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Velour & Ink was born from a simple observation: in our fast-paced digital world, there's a growing hunger for tactile, meaningful experiences. We noticed people yearning to slow down, to write by hand, to feel the quality of paper beneath their fingertips.
+                  Atelier Ons was born from a simple observation: in our
+                  fast-paced digital world, there's a growing hunger for
+                  tactile, meaningful experiences. We noticed people yearning to
+                  slow down, to write by hand, to feel the quality of paper
+                  beneath their fingertips.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  Inspired by vintage aesthetics, gothic elegance, and the timeless beauty of dark academia, we set out to create stationery that felt like an escape—a sanctuary for thoughts, dreams, and stories waiting to be told.
+                  Inspired by vintage aesthetics, gothic elegance, and the
+                  timeless beauty of dark academia, we set out to create
+                  stationery that felt like an escape—a sanctuary for thoughts,
+                  dreams, and stories waiting to be told.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Each product is curated with intention, designed for those who believe that writing is not just communication—it's art, therapy, and expression all in one.
+                  Each product is curated with intention, designed for those who
+                  believe that writing is not just communication—it's art,
+                  therapy, and expression all in one.
                 </p>
               </div>
               <div className="relative">
@@ -55,27 +65,38 @@ export default function AboutPage() {
           {/* Our Values */}
           <section className="mb-16 md:mb-24 py-12 bg-primary text-primary-foreground rounded">
             <div className="px-8">
-              <h2 className="font-serif text-4xl font-bold mb-12 text-center">Our Values</h2>
+              <h2 className="font-serif text-4xl font-bold mb-12 text-center">
+                Our Values
+              </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
                   <Heart className="w-12 h-12 mx-auto mb-4 text-accent" />
-                  <h3 className="font-serif font-bold text-xl mb-3">Dark Romance</h3>
+                  <h3 className="font-serif font-bold text-xl mb-3">
+                    Dark Romance
+                  </h3>
                   <p className="opacity-90">
-                    We celebrate the mystery and elegance of darkness, blending gothic charm with feminine sophistication.
+                    We celebrate the mystery and elegance of darkness, blending
+                    gothic charm with feminine sophistication.
                   </p>
                 </div>
                 <div className="text-center">
                   <Heart className="w-12 h-12 mx-auto mb-4 text-accent" />
-                  <h3 className="font-serif font-bold text-xl mb-3">Vintage Elegance</h3>
+                  <h3 className="font-serif font-bold text-xl mb-3">
+                    Vintage Elegance
+                  </h3>
                   <p className="opacity-90">
-                    Every piece honors the artistry of the past while celebrating the beauty of old-world craftsmanship.
+                    Every piece honors the artistry of the past while
+                    celebrating the beauty of old-world craftsmanship.
                   </p>
                 </div>
                 <div className="text-center">
                   <Heart className="w-12 h-12 mx-auto mb-4 text-accent" />
-                  <h3 className="font-serif font-bold text-xl mb-3">Intentional Living</h3>
+                  <h3 className="font-serif font-bold text-xl mb-3">
+                    Intentional Living
+                  </h3>
                   <p className="opacity-90">
-                    We believe in slowing down, savoring moments, and making each word you write truly matter.
+                    We believe in slowing down, savoring moments, and making
+                    each word you write truly matter.
                   </p>
                 </div>
               </div>
@@ -88,30 +109,42 @@ export default function AboutPage() {
               Our Aesthetic
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed text-center max-w-2xl mx-auto">
-              We draw inspiration from multiple worlds to create something uniquely ours:
+              We draw inspiration from multiple worlds to create something
+              uniquely ours:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {[
                 {
-                  title: 'Dark Academia',
-                  description: 'Library whispers, leather-bound secrets, and the romance of midnight studying.',
+                  title: "Dark Academia",
+                  description:
+                    "Library whispers, leather-bound secrets, and the romance of midnight studying.",
                 },
                 {
-                  title: 'Vintage Glamour',
-                  description: 'Old-money elegance, velvet textures, and the sophistication of a bygone era.',
+                  title: "Vintage Glamour",
+                  description:
+                    "Old-money elegance, velvet textures, and the sophistication of a bygone era.",
                 },
                 {
-                  title: 'Feminine Power',
-                  description: 'Celebrating the strength and beauty of girly aesthetics with gothic undertones.',
+                  title: "Feminine Power",
+                  description:
+                    "Celebrating the strength and beauty of girly aesthetics with gothic undertones.",
                 },
                 {
-                  title: 'Mystical Charm',
-                  description: 'Moody lighting, lace details, soft gold accents, and an air of mystery.',
+                  title: "Mystical Charm",
+                  description:
+                    "Moody lighting, lace details, soft gold accents, and an air of mystery.",
                 },
               ].map((item, i) => (
-                <div key={i} className="p-6 border border-border rounded hover:border-primary transition">
-                  <h3 className="font-serif font-bold text-foreground mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm">{item.description}</p>
+                <div
+                  key={i}
+                  className="p-6 border border-border rounded hover:border-primary transition"
+                >
+                  <h3 className="font-serif font-bold text-foreground mb-2">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm">
+                    {item.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -132,15 +165,30 @@ export default function AboutPage() {
                   Quality & Craftsmanship
                 </h2>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  We partner with artisans and manufacturers who share our commitment to excellence. Every journal, planner, and accessory is selected for its superior quality and attention to detail.
+                  We partner with artisans and manufacturers who share our
+                  commitment to excellence. Every journal, planner, and
+                  accessory is selected for its superior quality and attention
+                  to detail.
                 </p>
                 <p className="text-muted-foreground mb-4 leading-relaxed">
-                  From premium paper to luxurious covers, from gold foil accents to intricate embossing—we never compromise on the materials or methods used in crafting our products.
+                  From premium paper to luxurious covers, from gold foil accents
+                  to intricate embossing—we never compromise on the materials or
+                  methods used in crafting our products.
                 </p>
                 <ul className="space-y-3">
-                  {['Premium 120gsm+ paper', 'Hand-bound hardcovers', 'Gold & rose gold accents', 'Ethical sourcing'].map((item, i) => (
-                    <li key={i} className="flex gap-3 items-start text-muted-foreground">
-                      <span className="text-accent font-bold flex-shrink-0">✓</span>
+                  {[
+                    "Premium 120gsm+ paper",
+                    "Hand-bound hardcovers",
+                    "Gold & rose gold accents",
+                    "Ethical sourcing",
+                  ].map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex gap-3 items-start text-muted-foreground"
+                    >
+                      <span className="text-accent font-bold flex-shrink-0">
+                        ✓
+                      </span>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -152,10 +200,11 @@ export default function AboutPage() {
           {/* Call to Action */}
           <section className="text-center py-12 border-t border-border">
             <h2 className="font-serif text-3xl font-bold text-foreground mb-4">
-              Join the Velour & Ink Community
+              Join the Atelier Ons Community
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Become part of our community of writers, dreamers, and lovers of beautiful things.
+              Become part of our community of writers, dreamers, and lovers of
+              beautiful things.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

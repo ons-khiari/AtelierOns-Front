@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import Link from 'next/link';
-import { Mail, MapPin, Phone } from 'lucide-react';
+import Link from "next/link";
+import { Mail, MapPin, Phone } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,9 +10,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <h3 className="font-serif text-lg font-bold mb-4">Ons Atelier</h3>
+            <h3 className="font-serif text-lg font-bold mb-4">Atelier Ons</h3>
             <p className="text-sm opacity-80 leading-relaxed">
-              Elegantly crafted journal folios, bookmarks, and stationery for the sophisticated soul.
+              Elegantly crafted journal folios, bookmarks, and stationery for
+              the sophisticated soul.
             </p>
           </div>
 
@@ -20,10 +21,38 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-sm font-bold mb-4">Collections</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/journal-folios" className="opacity-80 hover:opacity-100 transition">Journal Folios</Link></li>
-              <li><Link href="/bookmarks" className="opacity-80 hover:opacity-100 transition">Bookmarks</Link></li>
-              <li><Link href="/stickers" className="opacity-80 hover:opacity-100 transition">Stickers</Link></li>
-              <li><Link href="/journal-basics" className="opacity-80 hover:opacity-100 transition">Journal Basics</Link></li>
+              <li>
+                <Link
+                  href="/journal-folios"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  Journal Folios
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/bookmarks"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  Bookmarks
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/stickers"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  Stickers
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/journal-basics"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  Journal Basics
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -31,9 +60,30 @@ export function Footer() {
           <div>
             <h4 className="font-serif text-sm font-bold mb-4">Company</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link href="/about" className="opacity-80 hover:opacity-100 transition">About Us</Link></li>
-              <li><Link href="/contact" className="opacity-80 hover:opacity-100 transition">Contact</Link></li>
-              <li><Link href="/faq" className="opacity-80 hover:opacity-100 transition">FAQ</Link></li>
+              <li>
+                <Link
+                  href="/about"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="opacity-80 hover:opacity-100 transition"
+                >
+                  FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -54,10 +104,14 @@ export function Footer() {
         </div>
 
         <div className="border-t border-primary-foreground/20 pt-8 flex flex-col md:flex-row items-center justify-between text-xs opacity-75">
-          <p>&copy; 2025 Ons Atelier. All rights reserved.</p>
+          <p>&copy; 2025 Atelier Ons. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="#" className="hover:opacity-100 transition">Privacy Policy</Link>
-            <Link href="#" className="hover:opacity-100 transition">Terms of Service</Link>
+            <Link href="#" className="hover:opacity-100 transition">
+              Privacy Policy
+            </Link>
+            <Link href="#" className="hover:opacity-100 transition">
+              Terms of Service
+            </Link>
           </div>
         </div>
       </div>

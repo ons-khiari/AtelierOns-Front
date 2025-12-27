@@ -1,18 +1,18 @@
-"use client"
-import Link from "next/link"
-import { Header } from "@/components/header"
-import { Footer } from "@/components/footer"
-import { Sparkles } from "lucide-react"
-import { ProductCard } from "@/components/product-card"
-import { TrendingProducts } from "@/components/trending-products"
-import { BundlesShowcase } from "@/components/bundles-showcase"
+"use client";
+import Link from "next/link";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { Sparkles } from "lucide-react";
+import { ProductCard } from "@/components/product-card";
+import { TrendingProducts } from "@/components/trending-products";
+import { BundlesShowcase } from "@/components/bundles-showcase";
 
 interface Product {
-  id: string
-  name: string
-  price: number
-  image: string
-  category: string
+  id: string;
+  name: string;
+  price: number;
+  image: string;
+  category: string;
 }
 
 const featuredProducts: Product[] = [
@@ -44,7 +44,7 @@ const featuredProducts: Product[] = [
     image: "/vintage-lace-notebook.jpg",
     category: "Stickers",
   },
-]
+];
 
 const bestSellers: Product[] = [
   {
@@ -61,7 +61,7 @@ const bestSellers: Product[] = [
     image: "/dusty-rose-planner.jpg",
     category: "Inserts",
   },
-]
+];
 
 export default function Home() {
   return (
@@ -80,7 +80,9 @@ export default function Home() {
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="mb-6 flex items-center justify-center gap-2 text-accent">
             <Sparkles className="w-4 h-4" />
-            <span className="text-sm tracking-widest uppercase">Dark Romance Elegance</span>
+            <span className="text-sm tracking-widest uppercase">
+              Dark Romance Elegance
+            </span>
             <Sparkles className="w-4 h-4" />
           </div>
 
@@ -89,8 +91,9 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Discover premium journal folios, inserts, and accessories crafted for those who appreciate the artistry of
-            journaling. Inspired by vintage elegance, dark academia, and timeless beauty.
+            Discover premium journal folios, inserts, and accessories crafted
+            for those who appreciate the artistry of journaling. Inspired by
+            vintage elegance, dark academia, and timeless beauty.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -114,9 +117,12 @@ export default function Home() {
       <section className="py-16 md:py-24 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Featured Collections</h2>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Featured Collections
+            </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Handpicked selections from our exclusive range of luxury stationery
+              Handpicked selections from our exclusive range of luxury
+              stationery
             </p>
           </div>
 
@@ -134,8 +140,12 @@ export default function Home() {
       <section className="py-16 md:py-24 px-4 bg-muted">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Customer Favorites</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">The most loved pieces in our collection</p>
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
+              Customer Favorites
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              The most loved pieces in our collection
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -162,18 +172,27 @@ export default function Home() {
         <div className="max-w-4xl mx-auto">
           <div className="flex flex-col md:flex-row gap-12 items-center">
             <div className="flex-1">
-              <img src="/cream-leather-portfolio.jpg" alt="Brand story" className="rounded w-full object-cover" />
+              <img
+                src="/cream-leather-portfolio.jpg"
+                alt="Brand story"
+                className="rounded w-full object-cover"
+              />
             </div>
             <div className="flex-1">
-              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">Our Inspiration</h3>
+              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
+                Our Inspiration
+              </h3>
               <p className="text-muted-foreground mb-4 leading-relaxed">
-                Velour & Ink celebrates the beauty of the written word through premium journal folios and accessories
-                that honor vintage elegance and dark romance. Each piece is crafted with intention—inspired by old love
-                letters, dark academia libraries, and the timeless aesthetics of feminine sophistication.
+                Atelier Ons celebrates the beauty of the written word through
+                premium journal folios and accessories that honor vintage
+                elegance and dark romance. Each piece is crafted with
+                intention—inspired by old love letters, dark academia libraries,
+                and the timeless aesthetics of feminine sophistication.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                We believe in slowing down, savoring moments, and expressing yourself through beautiful, artisanal
-                writing instruments and journals.
+                We believe in slowing down, savoring moments, and expressing
+                yourself through beautiful, artisanal writing instruments and
+                journals.
               </p>
               <Link
                 href="/about"
@@ -188,5 +207,5 @@ export default function Home() {
 
       <Footer />
     </main>
-  )
+  );
 }
