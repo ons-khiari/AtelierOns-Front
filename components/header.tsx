@@ -21,6 +21,7 @@ export function Header() {
     { href: "/journal-basics", label: "Journal Basics" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
+    { href: "/faq", label: "FAQ" },
   ];
 
   return (

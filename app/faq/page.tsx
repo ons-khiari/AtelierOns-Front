@@ -35,12 +35,12 @@ const faqItems: FAQItem[] = [
   {
     question: 'What is your return policy?',
     answer:
-      'We accept returns within 30 days of purchase for items in original condition. Personalized items cannot be returned. Once we receive your return, we'll process a refund within 5-7 business days. Return shipping is free for defective items.',
+      'We accept returns within 30 days of purchase for items in original condition. Personalized items cannot be returned. Once we receive your return, we will process a refund within 5-7 business days. Return shipping is free for defective items.',
   },
   {
     question: 'Are your products eco-friendly?',
     answer:
-      'We are committed to sustainability. Our paper is sourced from responsibly managed forests, and we use eco-friendly inks and minimal plastic packaging. We're continuously working to reduce our environmental impact.',
+      'We are committed to sustainability. Our paper is sourced from responsibly managed forests, and we use eco-friendly inks and minimal plastic packaging. We are continuously working to reduce our environmental impact.',
   },
   {
     question: 'Do you sell wholesale or bulk orders?',

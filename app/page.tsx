@@ -81,7 +81,7 @@ export default function Home() {
           <div className="mb-6 flex items-center justify-center gap-2 text-accent">
             <Sparkles className="w-4 h-4" />
             <span className="text-sm tracking-widest uppercase">
-              Dark Romance Elegance
+              Dark Romance stationery
             </span>
             <Sparkles className="w-4 h-4" />
           </div>

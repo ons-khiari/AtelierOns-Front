@@ -78,7 +78,7 @@ export function SearchDropdown() {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 top-12 w-96 bg-background border border-border rounded-lg shadow-lg z-50 animate-fadeIn">
+        <div className="absolute right-0 top-12 w-200 bg-background border border-border rounded-lg shadow-lg z-50 animate-fadeIn">
           {/* Search Input */}
           <div className="p-4 border-b border-border">
             <div className="relative">
