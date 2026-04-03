@@ -66,7 +66,6 @@ Create `.env.local` at repo root if you add custom API backends:
 
 - `NEXT_PUBLIC_API_URL=https://your-api.example.com`
 
-> The app is scaffolded with local dummy data in `lib/products-database.ts` so it works out-of-the-box without env vars.
 
 ---
 
@@ -89,7 +88,6 @@ Below are a few key pages. These are rendered directly in Markdown (not only sho
 
 ![Cart page screenshot](public/screenshots/cart-page.png)
 
-> Optional: add just a few curated screens, not every view, to keep README lightweight.
 
 ---
 
@@ -120,7 +118,6 @@ Below are a few key pages. These are rendered directly in Markdown (not only sho
 3. Commit with descriptive message
 4. Push branch and open PR
 
-> Please include issue link and testing steps in PR description.
 
 ---
 
