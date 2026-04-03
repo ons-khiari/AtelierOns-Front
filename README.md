@@ -81,15 +81,15 @@ Create `.env.local` at repo root if you add custom API backends:
 
 ## 🖼️ Screenshots
 
-- **Homepage**: `public/screenshots/homepage.png`
-- **Products page**: `public/screenshots/products-page.png`
-- **Product page**: `public/screenshots/cart-page.png`
-- **Cart page**: `public/screenshots/cart-page.png`
+Below are a few key pages. These are rendered directly in Markdown (not only shown as examples).
 
-```md
 ![Homepage screenshot](public/screenshots/homepage.png)
-![Product page screenshot](public/screenshots/product-page.png)
-```
+
+![Products page screenshot](public/screenshots/products-page.png)
+
+![Cart page screenshot](public/screenshots/cart-page.png)
+
+> Optional: add just a few curated screens, not every view, to keep README lightweight.
 
 ---
 
