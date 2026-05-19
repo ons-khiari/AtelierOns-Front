@@ -16,9 +16,6 @@ export function Header() {
 
   const navLinks = [
     { href: "/journal-folios", label: "Journal Folios" },
-    { href: "/bookmarks", label: "Bookmarks" },
-    { href: "/stickers", label: "Stickers" },
-    { href: "/journal-basics", label: "Journal Basics" },
     { href: "/about", label: "About" },
     { href: "/contact", label: "Contact" },
     { href: "/faq", label: "FAQ" },
