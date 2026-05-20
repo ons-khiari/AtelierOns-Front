@@ -94,15 +94,18 @@ export function AuthDropdown() {
 
   return (
     <div className="flex items-center gap-3">
-      {/* <Link href="/login" className="px-3 py-2 text-foreground hover:text-primary transition text-sm font-medium">
-        Login
-      </Link> */}
       <Link
         href="/register"
-        className="px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition text-sm font-medium"
+        className="relative overflow-hidden border border-black px-4 py-2 text-[11px] uppercase tracking-[0.25em] group"
       >
-        Sign Up
+        {/* Hover fill */}
+        <span className="absolute inset-0 bg-black scale-x-0 origin-left transition-transform duration-500 group-hover:scale-x-100" />
+
+        {/* Text */}
+        <span className="relative z-10 text-black group-hover:text-white transition-colors duration-300">
+          Sign Up
+        </span>
       </Link>
     </div>
-  )
+  );
 }

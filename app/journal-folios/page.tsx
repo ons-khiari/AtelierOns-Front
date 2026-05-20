@@ -29,10 +29,10 @@ export default function JournalFoliosPage() {
     })
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
 
-      <section className="py-12 md:py-16 px-4 bg-muted border-b border-border">
+      {/* <section className="py-12 md:py-16 px-4 bg-muted border-b border-border">
         <div className="max-w-7xl mx-auto">
           <h1 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">Journal Folios</h1>
           <p className="text-muted-foreground max-w-2xl">
@@ -40,7 +40,7 @@ export default function JournalFoliosPage() {
             with meticulous attention to detail and vintage elegance.
           </p>
         </div>
-      </section>
+      </section> */}
 
       <div className="flex-1 py-12 px-4">
         <div className="max-w-7xl mx-auto">

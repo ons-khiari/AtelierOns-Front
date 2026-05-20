@@ -22,26 +22,6 @@ export const bundlesDatabase: Bundle[] = [
     category: "Journal Folios",
   },
   {
-    id: "bundle-2",
-    name: "Sticker Trio Collection",
-    description: "Three essential sticker sheets for decorating",
-    products: ["4", "4", "4"], // Different sticker types
-    bundlePrice: 22,
-    discount: 5,
-    image: "/vintage-romance-sticker-pack-dark-romance-aestheti.jpg",
-    category: "Stickers",
-  },
-  {
-    id: "bundle-3",
-    name: "Bookmark Collection",
-    description: "Elegant bookmarks in different styles",
-    products: ["5", "5"], // Bookmark sets
-    bundlePrice: 28,
-    discount: 7,
-    image: "/rose-gold-embossed-journal.jpg",
-    category: "Bookmarks",
-  },
-  {
     id: "bundle-4",
     name: "Complete Planner Set",
     description: "Full journal with inserts and accessories",

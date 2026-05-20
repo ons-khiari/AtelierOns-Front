@@ -25,30 +25,6 @@ const defaultTrendingProducts: TrendingProduct[] = [
     category: "Journal Folios",
     trendScore: 95,
   },
-  {
-    id: "2",
-    name: "Rose Gold Planner",
-    price: 52,
-    image: "/rose-gold-planner.jpg",
-    category: "Inserts",
-    trendScore: 87,
-  },
-  {
-    id: "3",
-    name: "Vintage Romance Sticker Sheet",
-    price: 8,
-    image: "/vintage-romance-sticker-pack-dark-romance-aestheti.jpg",
-    category: "Stickers",
-    trendScore: 92,
-  },
-  {
-    id: "4",
-    name: "Silk Ribbon Bookmark Set",
-    price: 15,
-    image: "/rose-gold-embossed-journal.jpg",
-    category: "Bookmarks",
-    trendScore: 78,
-  },
 ]
 
 export function TrendingProducts({ products = defaultTrendingProducts }: TrendingProductsProps) {

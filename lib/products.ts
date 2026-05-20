@@ -7,7 +7,7 @@ export interface Product {
   id: string
   title: string
   description: string
-  category: "Journal Folios" | "Bookmarks" | "Stickers" | "Journal Basics"
+  category: "Journal Folios"
   price: number
   stock: number
   isFeatured: boolean
@@ -21,7 +21,7 @@ export interface Product {
   createdAt: string
 }
 
-export const CATEGORIES = ["Journal Folios", "Bookmarks", "Stickers", "Journal Basics"] as const
+export const CATEGORIES = ["Journal Folios"] as const
 
 // Complete product database with all items
 export const products: Product[] = [
@@ -102,177 +102,6 @@ export const products: Product[] = [
     createdAt: new Date("2024-02-01").toISOString(),
   },
 
-  // Bookmarks
-  {
-    id: "bm-1",
-    title: "Velvet Tassel Bookmark",
-    description: "Elegant bookmark with velvet ribbon and gold tassel. Add sophistication to every page.",
-    category: "Bookmarks",
-    price: 12,
-    stock: 45,
-    isFeatured: true,
-    isTrending: true,
-    thumbnailImage: "/images/bookmarks/tassel-thumb.jpg",
-    galleryImages: [
-      "/images/bookmarks/tassel-1.jpg",
-      "/images/bookmarks/tassel-2.jpg",
-      "/images/bookmarks/tassel-3.jpg",
-    ],
-    createdAt: new Date("2024-01-10").toISOString(),
-  },
-  {
-    id: "bm-2",
-    title: "Leather Cord Bookmark",
-    description: "Premium leather cord bookmark with rose gold charm.",
-    category: "Bookmarks",
-    price: 15,
-    stock: 32,
-    isFeatured: true,
-    isTrending: false,
-    thumbnailImage: "/images/bookmarks/leather-thumb.jpg",
-    galleryImages: [
-      "/images/bookmarks/leather-1.jpg",
-      "/images/bookmarks/leather-2.jpg",
-      "/images/bookmarks/leather-3.jpg",
-    ],
-    createdAt: new Date("2024-01-18").toISOString(),
-  },
-  {
-    id: "bm-3",
-    title: "Silk Ribbon Bookmark Set",
-    description: "Set of 3 bookmarks in complementary silk ribbon colors.",
-    category: "Bookmarks",
-    price: 25,
-    stock: 0,
-    isFeatured: false,
-    isTrending: false,
-    thumbnailImage: "/images/bookmarks/silk-set-thumb.jpg",
-    galleryImages: [
-      "/images/bookmarks/silk-set-1.jpg",
-      "/images/bookmarks/silk-set-2.jpg",
-      "/images/bookmarks/silk-set-3.jpg",
-    ],
-    createdAt: new Date("2024-02-05").toISOString(),
-  },
-
-  // Stickers
-  {
-    id: "st-1",
-    title: "Vintage Floral Sticker Sheet",
-    description: "Beautiful set of 12 vintage floral stickers for decorating journals.",
-    category: "Stickers",
-    price: 6,
-    stock: 120,
-    isFeatured: true,
-    isTrending: true,
-    thumbnailImage: "/images/stickers/floral-thumb.jpg",
-    galleryImages: ["/images/stickers/floral-1.jpg", "/images/stickers/floral-2.jpg", "/images/stickers/floral-3.jpg"],
-    createdAt: new Date("2024-01-05").toISOString(),
-  },
-  {
-    id: "st-2",
-    title: "Gold Foil Decorative Stickers",
-    description: "Premium gold foil stickers for elegant page marking.",
-    category: "Stickers",
-    price: 8,
-    stock: 89,
-    isFeatured: true,
-    isTrending: true,
-    thumbnailImage: "/images/stickers/gold-foil-thumb.jpg",
-    galleryImages: [
-      "/images/stickers/gold-foil-1.jpg",
-      "/images/stickers/gold-foil-2.jpg",
-      "/images/stickers/gold-foil-3.jpg",
-    ],
-    createdAt: new Date("2024-01-12").toISOString(),
-  },
-  {
-    id: "st-3",
-    title: "Minimalist Line Art Stickers",
-    description: "Contemporary line art sticker collection with 15 designs.",
-    category: "Stickers",
-    price: 7,
-    stock: 2,
-    isFeatured: false,
-    isTrending: false,
-    thumbnailImage: "/images/stickers/line-art-thumb.jpg",
-    galleryImages: [
-      "/images/stickers/line-art-1.jpg",
-      "/images/stickers/line-art-2.jpg",
-      "/images/stickers/line-art-3.jpg",
-    ],
-    createdAt: new Date("2024-02-10").toISOString(),
-  },
-
-  // Journal Basics
-  {
-    id: "jb-1",
-    title: "Luxury Cream Insert Pages",
-    description: "300-page cream paper insert perfect for any folio. Premium paper quality.",
-    category: "Journal Basics",
-    price: 22,
-    stock: 67,
-    isFeatured: true,
-    isTrending: true,
-    thumbnailImage: "/images/journal-basics/cream-insert-thumb.jpg",
-    galleryImages: [
-      "/images/journal-basics/cream-insert-1.jpg",
-      "/images/journal-basics/cream-insert-2.jpg",
-      "/images/journal-basics/cream-insert-3.jpg",
-    ],
-    createdAt: new Date("2024-01-08").toISOString(),
-  },
-  {
-    id: "jb-2",
-    title: "Dotted Grid Insert Pad",
-    description: "200-page dotted grid insert for planning and sketching.",
-    category: "Journal Basics",
-    price: 18,
-    stock: 43,
-    isFeatured: true,
-    isTrending: false,
-    thumbnailImage: "/images/journal-basics/dotted-thumb.jpg",
-    galleryImages: [
-      "/images/journal-basics/dotted-1.jpg",
-      "/images/journal-basics/dotted-2.jpg",
-      "/images/journal-basics/dotted-3.jpg",
-    ],
-    createdAt: new Date("2024-01-22").toISOString(),
-  },
-  {
-    id: "jb-3",
-    title: "Silk Ribbon Sleeve",
-    description: "Protective silk sleeve to keep your folio pristine.",
-    category: "Journal Basics",
-    price: 16,
-    stock: 0,
-    isFeatured: false,
-    isTrending: false,
-    thumbnailImage: "/images/journal-basics/sleeve-thumb.jpg",
-    galleryImages: [
-      "/images/journal-basics/sleeve-1.jpg",
-      "/images/journal-basics/sleeve-2.jpg",
-      "/images/journal-basics/sleeve-3.jpg",
-    ],
-    createdAt: new Date("2024-02-08").toISOString(),
-  },
-  {
-    id: "jb-4",
-    title: "Linen Pocket Set",
-    description: "Set of 2 linen pockets for storing small items in your folio.",
-    category: "Journal Basics",
-    price: 14,
-    stock: 28,
-    isFeatured: true,
-    isTrending: false,
-    thumbnailImage: "/images/journal-basics/pockets-thumb.jpg",
-    galleryImages: [
-      "/images/journal-basics/pockets-1.jpg",
-      "/images/journal-basics/pockets-2.jpg",
-      "/images/journal-basics/pockets-3.jpg",
-    ],
-    createdAt: new Date("2024-02-03").toISOString(),
-  },
 ]
 
 // Helper functions

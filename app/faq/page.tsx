@@ -62,11 +62,11 @@ export default function FAQPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 bg-muted border-b border-border">
+      {/* <section className="py-16 md:py-24 px-4 bg-muted border-b border-border">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
             Frequently Asked Questions
@@ -75,7 +75,7 @@ export default function FAQPage() {
             Find answers to common questions about our products, shipping, and policies.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Main Content */}
       <div className="flex-1 py-16 md:py-24 px-4">

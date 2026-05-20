@@ -32,11 +32,11 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 bg-muted border-b border-border">
+      {/* <section className="py-16 md:py-24 px-4 bg-muted border-b border-border">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
             Get in Touch
@@ -45,7 +45,7 @@ export default function ContactPage() {
             We'd love to hear from you. Reach out with any questions, suggestions, or just to say hello.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Main Content */}
       <div className="flex-1 py-16 md:py-24 px-4">

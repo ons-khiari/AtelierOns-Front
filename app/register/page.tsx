@@ -55,7 +55,7 @@ export default function RegisterPage() {
   }
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
 
       <div className="flex-1 py-12 px-4">

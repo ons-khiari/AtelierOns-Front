@@ -11,7 +11,7 @@ export default function AboutPage() {
       <Header />
 
       {/* Hero Section */}
-      <section className="py-16 md:py-24 px-4 bg-muted border-b border-border">
+      {/* <section className="py-16 md:py-24 px-4 border-b border-border">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
             Our Story
@@ -21,7 +21,7 @@ export default function AboutPage() {
             where writing becomes art.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* Main Content */}
       <div className="flex-1 py-16 md:py-24 px-4">

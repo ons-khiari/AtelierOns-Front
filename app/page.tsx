@@ -29,21 +29,7 @@ const featuredProducts: Product[] = [
     price: 95,
     image: "/rose-gold-planner.jpg",
     category: "Journal Folios",
-  },
-  {
-    id: "3",
-    name: "Weekly Planner Insert",
-    price: 22,
-    image: "/midnight-pearl-pen-set.jpg",
-    category: "Inserts",
-  },
-  {
-    id: "4",
-    name: "Vintage Romance Sticker Sheet",
-    price: 8,
-    image: "/vintage-lace-notebook.jpg",
-    category: "Stickers",
-  },
+  }
 ];
 
 const bestSellers: Product[] = [
@@ -69,14 +55,12 @@ export default function Home() {
       <Header />
 
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 overflow-hidden">
-        {/* Background */}
+      {/* <section className="relative min-h-[80vh] md:min-h-screen flex items-center justify-center px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-background via-muted to-background">
           <div className="absolute top-10 right-10 w-96 h-96 rounded-full opacity-10 bg-accent blur-3xl"></div>
           <div className="absolute -bottom-20 left-10 w-80 h-80 rounded-full opacity-5 bg-primary blur-3xl"></div>
         </div>
 
-        {/* Content */}
         <div className="relative z-10 max-w-4xl mx-auto text-center">
           <div className="mb-6 flex items-center justify-center gap-2 text-accent">
             <Sparkles className="w-4 h-4" />
@@ -111,10 +95,10 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Featured Products Section */}
-      <section className="py-16 md:py-24 px-4 bg-background">
+      {/* <section className="py-16 md:py-24 px-4 bg-background">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -132,12 +116,12 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <TrendingProducts />
+      {/* <TrendingProducts /> */}
 
       {/* Best Sellers Section */}
-      <section className="py-16 md:py-24 px-4 bg-muted">
+      {/* <section className="py-16 md:py-24 px-4 bg-muted">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -163,44 +147,39 @@ export default function Home() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
-      <BundlesShowcase />
+      {/* <BundlesShowcase /> */}
 
-      {/* Brand Story Section */}
-      <section className="py-16 md:py-24 px-4 bg-background">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            <div className="flex-1">
-              <img
-                src="/cream-leather-portfolio.jpg"
-                alt="Brand story"
-                className="rounded w-full object-cover"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-serif text-3xl font-bold text-foreground mb-4">
-                Our Inspiration
-              </h3>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                Atelier Ons celebrates the beauty of the written word through
-                premium journal folios and accessories that honor vintage
-                elegance and dark romance. Each piece is crafted with
-                intention—inspired by old love letters, dark academia libraries,
-                and the timeless aesthetics of feminine sophistication.
-              </p>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                We believe in slowing down, savoring moments, and expressing
-                yourself through beautiful, artisanal writing instruments and
-                journals.
-              </p>
-              <Link
-                href="/about"
-                className="text-primary font-serif hover:text-accent transition inline-flex items-center gap-2"
-              >
-                Read Our Full Story →
-              </Link>
-            </div>
+
+      {/* Luxury Image Carousel Strip */}
+      <section className="py-1 bg-white overflow-hidden border-t border-gray-100">
+        <div className="relative w-full">
+          {/* Fade edges */}
+          <div className="absolute left-0 top-0 h-full w-32 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 h-full w-32 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
+
+          {/* Track */}
+          <div className="flex w-max animate-scrollXBig gap-1">
+            {[...Array(2)].flatMap((_, i) =>
+              [
+                "/images/journal-folios/rose-gold-thumb.jpg",
+                "/images/journal-folios/midnight-thumb.jpg",
+                "/images/journal-folios/cream-thumb.jpg",
+                "/images/journal-folios/velvet-burgundy-thumb.jpg",
+              ].map((src, index) => (
+                <div
+                  key={`${i}-${index}`}
+                  className="w-[400px] md:w-[400px] h-[400px] md:h-[400px] flex-shrink-0 overflow-hidden border border-gray-200 bg-gray-50"
+                >
+                  <img
+                    src={src}
+                    alt="collection"
+                    className="w-full h-full object-cover hover:scale-105 transition duration-700"
+                  />
+                </div>
+              )),
+            )}
           </div>
         </div>
       </section>

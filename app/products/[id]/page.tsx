@@ -143,7 +143,7 @@ export default function ProductPage({
   const categorySlug = product.category.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
 
       {showFavoritesToast && (

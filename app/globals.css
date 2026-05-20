@@ -5,7 +5,7 @@
 
 :root {
   /* Dark romance color palette */
-  --background: oklch(0.97 0.01 0);
+  --background: white;
   --foreground: oklch(0.1 0.01 0);
   --card: oklch(0.98 0.01 0);
   --card-foreground: oklch(0.1 0.01 0);
@@ -255,20 +255,33 @@
     }
   }
 
-  @keyframes shimmerHover {
+  .victorian-marquee {
+    width: max-content;
+    animation: victorianScroll 38s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes victorianScroll {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-20%);
+    }
+  }
+
+  @keyframes scrollXBig {
     0% {
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.1) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      background-size: 200% 100%;
-      background-position: -200% 0;
+      transform: translateX(0);
     }
     100% {
-      background-position: 200% 0;
+      transform: translateX(-50%);
     }
+  }
+
+  .animate-scrollXBig {
+    animation: scrollXBig 30s linear infinite;
   }
 
   /* Added shimmer and cart bounce animations */

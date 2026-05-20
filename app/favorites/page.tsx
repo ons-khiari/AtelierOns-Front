@@ -20,7 +20,7 @@ export default function FavoritesPage() {
   if (!mounted) return null;
 
   return (
-    <main className="min-h-screen flex flex-col">
+    <main className="bg-gray-50 min-h-screen flex flex-col">
       <Header />
 
       {/* Breadcrumb */}
